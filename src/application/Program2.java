@@ -21,6 +21,17 @@ public class Program2 {
 		for(Department e : list) {
 			System.out.println(e);
 		}
+		
+		System.out.println("\n===== TEST 3: department insert =====");
+		Department newDep = new Department(null, "Music");
+		departmentDao.insert(newDep);
+		System.out.println("Inserted! new id = " + newDep.getId());
+		
+		System.out.println("\n===== TEST 4: department update =====");
+		dep = departmentDao.findById(1);
+		dep.setName("Music3");
+		departmentDao.update(dep);
+		System.out.println("Update completed!");
 	}
 
 }
